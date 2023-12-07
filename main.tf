@@ -60,7 +60,7 @@ resource "aws_instance" "http_server" {
   provisioner "remote-exec" {
     inline = [
       "sudo yum update -y",
-      "sudo yum install httpd -y",
+      "sudo yum install httpd git -y",
       "sudo systemctl start httpd",
       "sudo systemctl enable httpd",
       "sudo chmod 777 /var/www/html",
